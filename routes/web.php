@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use App\Models\Listing;
 use Illuminate\Support\Facades\Route;
 
@@ -22,7 +23,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard'); */
 
-require __DIR__.'/auth.php';
+/* require __DIR__.'/auth.php'; */
 
 Route::get('/', function () {
     return view('listings', [
@@ -31,8 +32,9 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/listings/{$id}', function($id) {
+Route::get('/listings/{listing}', function(Listing $listing) {
     return view('listing', [
-        'listing' => Listing::find($id)
-    ]);
+        'listing' => $listing
+    ]); 
+
 });

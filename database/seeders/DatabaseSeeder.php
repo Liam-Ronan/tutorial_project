@@ -21,12 +21,6 @@ class DatabaseSeeder extends Seeder
         Listing::factory(6)->create();
 
 
-
-
-
-
-
-
            /*Listing::create([
             'title' => 'Laravel Senior Developer', 
             'tags' => 'laravel, javascript',
